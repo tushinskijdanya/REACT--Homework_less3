@@ -1,23 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
+import Section from "./components/Section";
+import novelties from "./data/novelties-data";
+
 
 function App() {
+  const noveltiesElement = novelties.map((card, idx) => <Section card={card} key={idx} />);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <section className="novelties_cards">
+        {noveltiesElement}
+      </section>
     </div>
   );
 }
